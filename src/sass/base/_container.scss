@@ -1,0 +1,16 @@
+.container {
+  margin: 0 auto;
+  padding: 0 3.7%;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: $desktop) {
+  .container {
+    padding: 0 6.7%;
+  }
+}
+
+.test {
+  font-family: Raleway, sans-serif;
+}
