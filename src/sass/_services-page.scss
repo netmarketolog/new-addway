@@ -1,0 +1,9 @@
+.services-page_container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: 480px) {
+    padding-left: 3.7%;
+    padding-right: 3.7%;
+  }
+}
