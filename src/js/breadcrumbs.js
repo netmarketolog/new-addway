@@ -5,6 +5,8 @@ export default function getBreadcrumbs() {
 
   const locationArray = breadcrumbs[currentUrl];
 
+  if (!locationArray) return;
+
   const breadcrumbWrapper = document.querySelector('.breadcrumb>ul');
 
   const markup = locationArray
