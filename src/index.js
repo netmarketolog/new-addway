@@ -1,5 +1,6 @@
 import './js/scroll-to-top';
 import getBreadcrumbs from './js/breadcrumbs';
+import './js/slider';
 
 (() => {
   const refs = {
