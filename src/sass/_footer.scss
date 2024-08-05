@@ -39,6 +39,8 @@
 
   &__mail {
     font-size: 20px;
+    color: #008efc;
+    text-decoration: underline;
 
     @media screen and (min-width: $mobile) {
       font-size: 22px;
