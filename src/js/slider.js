@@ -4,8 +4,5 @@ $(document).ready(function () {
     slidesToScroll: 1,
     arrows: true,
     dots: true,
-    // variableWidth: true,
   });
 });
-
-// $('.slider__wrapper').slick();
