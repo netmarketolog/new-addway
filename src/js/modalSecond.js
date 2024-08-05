@@ -1,6 +1,6 @@
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("openModalBtn");
-const span = document.getElementsByClassName("closeSecondModal")[0];
+const span = document.getElementsByClassName("modal__close modal__close--second")[0];
 
 // Открываем модалку при клике на кнопку
 btn.onclick = function() {
@@ -57,7 +57,7 @@ const sendMessage = (name, message) => {
 };
 
 // Handle form submission
-document.querySelector('.modal-form').addEventListener('submit', function(event) {
+document.querySelector('.modal__form').addEventListener('submit', function(event) {
   event.preventDefault();
   const name = document.getElementById('name').value;
   const phone = document.getElementById('phone').value;

@@ -2,33 +2,30 @@ if (!window.modalInitialized) {
   const modal = document.getElementById("modalHero");
   const btn = document.getElementById("openModalBtn");
   const span = document.getElementsByClassName("close")[0];
-  const spanHero = document.getElementsByClassName("closeHero")[0];
+  const spanHero = document.getElementsByClassName("modal__close modal__close--hero")[0];
 
-  
-  window.onload = function() {
-    setTimeout(function() {
-      modal.style.display = "block";
-    }, 150); // 15000 миллисекунд = 15 секунд
-  }
+  // Проверяем состояние модального окна в localStorage
+  const modalState = localStorage.getItem('modalHeroState');
 
-
-
-  if (span) {
-    span.onclick = function() {
-      modal.style.display = "none";
+  if (modalState !== 'closed') {
+    window.onload = function() {
+      setTimeout(function() {
+        modal.style.display = "block";
+      }, 15000); // 15000 миллисекунд = 15 секунд
     }
   }
-
-  if (spanHero) {
-    spanHero.onclick = function() {
-      modal.style.display = "none";
-    }
-  }
-
-  
 
   function closeModal() {
     modal.style.display = "none";
+    localStorage.setItem('modalHeroState', 'closed');
+  }
+
+  if (span) {
+    span.onclick = closeModal;
+  }
+
+  if (spanHero) {
+    spanHero.onclick = closeModal;
   }
 
   // Telegram bot 
@@ -63,8 +60,7 @@ if (!window.modalInitialized) {
     });
   };
 
-
-  document.querySelector('.modalHero-form').addEventListener('submit', function(event) {
+  document.querySelector('.modal__form--hero').addEventListener('submit', function(event) {
     event.preventDefault();
     const name = document.getElementById('name').value || 'не заполнено';
     const phone = document.getElementById('phone').value || 'не заполнено';
@@ -75,6 +71,5 @@ if (!window.modalInitialized) {
     this.reset();
   });
 
- 
   window.modalInitialized = true;
 }
