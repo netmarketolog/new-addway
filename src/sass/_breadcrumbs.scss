@@ -1,0 +1,36 @@
+.breadcrumb {
+  padding: 0 0.5rem;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+}
+
+.breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--second-title-color);
+}
+
+.breadcrumb li:not(:last-child)::after {
+  display: inline-block;
+  margin: 0 0.25rem;
+  content: '/';
+}
+
+.breadcrumb li:not(:last-child) > a {
+  text-decoration: underline;
+  color: #008efc;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.breadcrumb li:last-child > a {
+  color: var(--second-title-color);
+  pointer-events: none;
+  cursor: default;
+}

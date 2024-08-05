@@ -1,4 +1,5 @@
 import './js/scroll-to-top';
+import getBreadcrumbs from './js/breadcrumbs';
 
 (() => {
   const refs = {
@@ -17,3 +18,4 @@ import './js/scroll-to-top';
   }
 })();
 
+getBreadcrumbs();

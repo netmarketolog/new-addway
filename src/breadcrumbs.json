@@ -1,0 +1,38 @@
+{
+  "/about": [
+    { "title": "Головна", "path": "/" },
+    { "title": "Про компанію", "path": "/about" }
+  ],
+  "/services": [
+    { "title": "Головна", "path": "/" },
+    { "title": "Послуги", "path": "/services" }
+  ],
+  "/pr": [
+    { "title": "Головна", "path": "/" },
+    { "title": "Послуги", "path": "/services" },
+    { "title": "PR", "path": "/pr" }
+  ],
+  "/design": [
+    { "title": "Головна", "path": "/" },
+    { "title": "Послуги", "path": "/services" },
+    { "title": "Design", "path": "/design" }
+  ],
+  "/smm": [
+    { "title": "Головна", "path": "/" },
+    { "title": "Послуги", "path": "/services" },
+    { "title": "SMM", "path": "/smm" }
+  ],
+  "/digital": [
+    { "title": "Головна", "path": "/" },
+    { "title": "Послуги", "path": "/services" },
+    { "title": "Digital", "path": "/digital" }
+  ],
+  "/vacancies": [
+    { "title": "Головна", "path": "/" },
+    { "title": "Вакансії", "path": "/vacancies" }
+  ],
+  "/testimonials": [
+    { "title": "Головна", "path": "/" },
+    { "title": "Відгуки про нас", "path": "/testimonials" }
+  ]
+}
