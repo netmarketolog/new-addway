@@ -1,5 +1,5 @@
 {
-  "/aboutUs": [
+  "/about-us": [
     { "title": "Головна", "path": "./" },
     { "title": "Про компанію", "path": "./about" }
   ],
