@@ -16,22 +16,28 @@
   position: relative;
   background-color: #fff;
   margin: 15% auto;
-  padding: 60px;
+  padding: 30px;
   border: 1px solid #888;
   width: 90%;
-  
+  padding-bottom: 40px;
+  padding-top: 60px;
   border-radius: 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  @media (max-width:480px) {
-    width: 280px;
-  };
+ 
   @media (width:767px) {
     width: 380px;
+    padding:60px 32px 40px 32px;
+  
   }
+   @media (max-width:480px) {
+    width: 280px;
+   padding-left: 24px;
+        padding-right: 24px;
+  };
 }
 
 .modal__close--second {
@@ -75,11 +81,13 @@
 
   input[type="text"],
   input[type="tel"] {
+    background-color: var(--background-pages);
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    height: 62px;
   }
 
   input[type="checkbox"] {
@@ -87,16 +95,40 @@
   }
 
   button {
+    width: 100%;
     background-color:var(--main-red-color);
     color: white;
-    padding: 10px 20px;
+    padding: 20px 30px 20px 30px;
     border: none;
-    border-radius: 5px;
+    min-height: 82px;
+    font-family: Raleway, sans-serif;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 16px;font-weight: 600;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    border-bottom-right-radius: 250px;
+    border-bottom-left-radius: 250px;
+    margin-top: 15px;
+ 
+       @media screen and (max-width:$tablet) {
+             font-size: 17px;
+             margin-top: 25px;
+    }
 
+    @media screen and (max-width:$mobile) {
+     padding-left: 25px;
+     padding-right: 25px;
+        
+    }
+  
     &:hover {
-      background-color:var(--main-red-color);
+      background-color:var(--main-title-color);
+      color:black;
+      border: 2px solid var(--main-red-color);
+      transition-property: all;
+      transition-duration: 300ms;
+      transition-delay: 0ms;
+      transition-timing-function: ease;
     }
   }
 }
