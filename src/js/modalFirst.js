@@ -1,3 +1,4 @@
+
 if (!window.modalInitialized) {
   const modal = document.getElementById("modalHero");
   const btn = document.getElementById("openModalBtn");
@@ -72,4 +73,7 @@ if (!window.modalInitialized) {
   });
 
   window.modalInitialized = true;
-}
+} 
+
+
+  
