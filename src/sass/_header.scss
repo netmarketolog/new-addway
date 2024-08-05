@@ -1,9 +1,9 @@
 .header {
-    position: absolute;
     width: 100%;
     padding-top: 70px;
-    display: flex;
-    justify-content: center;
+    padding-bottom: 60px;
+    // display: flex;
+    // justify-content: center;
 
     // z-index: 1;
     // @media screen and (min-width: 768px) {
@@ -17,10 +17,23 @@
     // }
 }
 
+.home-header {
+    position: absolute;
+    background-image: none;
+}
+
+.other-page-header {
+    padding-top: 70px;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/Hero.jpg);
+    background-color: rgba(0, 0, 0, 0.7);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .header__container {
     align-items: center;
-    padding-top: 40px;
-    padding-bottom: 30px;
 }
 
 .logo__container {
@@ -34,7 +47,6 @@
     color: var(--main-title-color);
     text-align: center;
     text-decoration: none;
-
 }
 
 .logo {
@@ -75,8 +87,8 @@
 }
 
 .header-menu__open {
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     width: 52px;
     height: 52px;
     position: absolute;
@@ -88,17 +100,24 @@
     border-bottom-left-radius: 8px;
 }
 
-.burger{
-    position: absolute;
+.burger {
+    position: fixed;
     height: 100vh;
+    overflow-y: auto;
     width: 280px;
     background-color: rgb(240, 240, 240);
-    top: -70px;
-    right: 0;
+    top: 0;
     padding: 50px 30px;
+    right: -280px;
+    z-index: 1000;
+    transition: right 0.3s ease;
+
+    &.open {
+        right: 0;
+    }
 }
 
-.header-menu__close{
+.header-menu__close {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -108,9 +127,9 @@
     top: 0;
 }
 
-.site-nav__item-container{
-display: flex;
-align-items: center;
+.site-nav__item-container {
+    display: flex;
+    align-items: center;
 }
 
 .site-nav__link {
@@ -120,30 +139,43 @@ align-items: center;
     color: var(--second-main-text-color);
     font-size: 18px;
     font-weight: 600;
-    &:hover{
+
+    &:hover {
         color: var(--main-red-color);
-        transition: all 0.3s ease 0s;
+        transition: all 0.3s ease;
     }
 }
 
-.site-nav__btn{
+.site-nav__btn {
     width: 27px;
     height: 27px;
     background-color: transparent;
     border: none;
 }
 
-.site-nav__item-services{
+.site-nav__dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    width: 100%;
+
+    &.open {
+        max-height: 200px;
+    }
+}
+
+.site-nav__item-services {
     padding: 0 0 0 10px;
 }
 
-.site-nav__link-services{
+.site-nav__link-services {
     display: block;
     padding: 15px 20px;
     color: var(--second-title-color);
     font-size: 16px;
     font-weight: 500;
-    &:hover{
+
+    &:hover {
         background-color: var(--background-origin);
         color: var(--main-red-color);
     }
