@@ -1,0 +1,19 @@
+.services-partial-info {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: 480px) {
+    padding-left: 3.7%;
+    padding-right: 3.7%;
+  }
+}
+
+.services-partial-info_title {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 27px;
+}
+
+.services-partial-info_content {
+  line-height: 150%;
+}
