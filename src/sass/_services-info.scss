@@ -1,32 +1,66 @@
-.services-partial-info_title {
+.services-info {
+  margin-bottom: 40px;
+}
+
+.services-info_title {
   display: flex;
-  position: relative;
   margin-top: 20px;
   margin-bottom: 5px;
-  font-size: 27px;
 
+  font-size: 27px;
   font-weight: 600;
   line-height: 110%;
   color: var(--second-main-text-color);
+
+  @media screen and (min-width: $desktop) {
+    margin: 40px 0 30px 0;
+
+    font-size: 3.6vw;
+  }
 }
 
-.services-partial-info_content {
+.services-info_list {
   margin-top: 20px;
   line-height: 150%;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 32px 0;
+    flex-wrap: nowrap;
+  }
 }
 
-.services-partial-info_item {
+.services-info_item {
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 20px;
-  width: calc(100% - 16px);
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    margin-left: 0;
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: calc(((100% / 12) * 6) - 16px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 32px;
+    // height: 50%;
+  }
 }
 
-.services-partial-info_item-img {
+.services-info_item-img {
   margin: 0 0 20px;
 }
 
-.services-partial-info_item-title {
+.services-info_item-title {
   margin: 0 0 12px;
 
   font-weight: 600;
@@ -35,7 +69,7 @@
   color: var(--second-main-text-color);
 }
 
-.services-partial-info_item-text {
+.services-info_item-text {
   margin: 0 0 16px;
   box-sizing: border-box;
 
@@ -44,7 +78,7 @@
   color: var(--second-title-color);
 }
 
-.services-partial-info_link {
+.services-info_link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,6 +91,7 @@
   border-bottom-right-radius: 250px;
   border-color: rgba(204, 204, 204, 0);
   border-style: solid;
+  border-width: 0px;
 
   font-size: 18px;
   line-height: 1;
