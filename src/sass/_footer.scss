@@ -181,6 +181,10 @@
     font-size: 14px;
     margin-top: 10px;
 
+    @media screen and (max-width: $mobile) {
+      text-align: center;
+    }
+
     @media screen and (min-width: $desktop) {
       margin-top: 0;
       width: 260px;
