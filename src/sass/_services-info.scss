@@ -26,7 +26,7 @@
   @media screen and (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    // align-items: center;
   }
 
   @media screen and (min-width: $desktop) {
@@ -39,9 +39,9 @@
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 20px;
-  width: 100%;
 
   @media screen and (min-width: $tablet) {
+    height: 435px;
     margin-left: 0;
     margin-right: 16px;
     display: flex;
@@ -51,8 +51,8 @@
   }
 
   @media screen and (min-width: $desktop) {
+    height: auto;
     margin-right: 32px;
-    // height: 50%;
   }
 }
 
@@ -67,6 +67,10 @@
   font-size: 20px;
   line-height: 1.2;
   color: var(--second-main-text-color);
+
+  @media screen and (min-width: $tablet) {
+    font-size: 22px;
+  }
 }
 
 .services-info_item-text {
@@ -76,6 +80,14 @@
   font-size: 16px;
   line-height: 1.2;
   color: var(--second-title-color);
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 28px;
+  }
 }
 
 .services-info_link {
