@@ -1,0 +1,114 @@
+.services-info {
+  margin-bottom: 40px;
+}
+
+.services-info_title {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 5px;
+
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 110%;
+  color: var(--second-main-text-color);
+
+  @media screen and (min-width: $desktop) {
+    margin: 40px 0 30px 0;
+
+    font-size: 3.6vw;
+  }
+}
+
+.services-info_list {
+  margin-top: 20px;
+  line-height: 150%;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    // align-items: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 32px 0;
+    flex-wrap: nowrap;
+  }
+}
+
+.services-info_item {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $tablet) {
+    height: 435px;
+    margin-left: 0;
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: calc(((100% / 12) * 6) - 16px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: auto;
+    margin-right: 32px;
+  }
+}
+
+.services-info_item-img {
+  margin: 0 0 20px;
+}
+
+.services-info_item-title {
+  margin: 0 0 12px;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--second-main-text-color);
+
+  @media screen and (min-width: $tablet) {
+    font-size: 22px;
+  }
+}
+
+.services-info_item-text {
+  margin: 0 0 16px;
+  box-sizing: border-box;
+
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--second-title-color);
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 28px;
+  }
+}
+
+.services-info_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: max(2.778em, 50px);
+
+  border-top-left-radius: 250px;
+  border-top-right-radius: 250px;
+  border-bottom-left-radius: 250px;
+  border-bottom-right-radius: 250px;
+  border-color: rgba(204, 204, 204, 0);
+  border-style: solid;
+  border-width: 0px;
+
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+
+  background: var(--main-red-color);
+  color: var(--main-title-color);
+}
