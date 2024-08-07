@@ -4,8 +4,8 @@
   "description": "",
   "homepage": "https://netmarketolog.github.io/new-addway",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /first-project-goit/"
+    "start": "parcel src/*.html --no-cache",
+    "build": "parcel build src/*.html --public-url /first-project-goit/ --no-cache"
   },
   "repository": {
     "type": "git",
