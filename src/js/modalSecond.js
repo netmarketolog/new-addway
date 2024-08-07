@@ -1,3 +1,4 @@
+import Inputmask from "inputmask";
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("openModalBtn");
 const span = document.getElementsByClassName("modal__close modal__close--second")[0];
@@ -65,3 +66,19 @@ document.querySelector('.modal__form').addEventListener('submit', function(event
   closeModal();
   this.reset();
 });
+ const phoneInput = document.getElementById('phone');
+     const im = new Inputmask({ 
+       mask: "+38 (999) 999-99-99",
+       showMaskOnHover: false,
+       showMaskOnFocus: true,
+       onincomplete: function() {
+         phoneInput.setSelectionRange(4, 4); 
+       }
+     });
+     im.mask(phoneInput);
+
+     phoneInput.addEventListener('focus', function() {
+       setTimeout(function() {
+         phoneInput.setSelectionRange(4, 4); 
+       }, 0);
+     });
