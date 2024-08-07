@@ -1,7 +1,5 @@
-
-
 .modal--second {
-  display: none; 
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -16,31 +14,33 @@
   position: relative;
   background-color: #fff;
   margin: 15% auto;
-  padding: 30px;
+  padding: 30px 24px 30px 24px;
   border: 1px solid #888;
   width: 90%;
-  padding-bottom: 40px;
-  padding-top: 60px;
+  // padding-bottom: 40px;
+  // padding-top: 60px;
   border-radius: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-   overflow: hidden;
-    @media screen and (min-width: $desktop) and (max-width: 3600px) {
-    width: 560px;
-    padding: 60px;
-  };
- @media screen and (min-width: $tablet) and (max-width: $desktop) {
+  overflow: hidden;
+  width: 280px;
+  //   @media screen and (min-width: $mobile)   {
+
+  //  padding-left: 24px;
+  //       padding-right: 24px;
+  // };
+  @media screen and (min-width: $tablet) {
     width: 380px;
     padding: 60px 32px 40px 32px;
   }
-   @media screen and (min-width: $mobile) and (max-width: $tablet) {
-    width: 280px;
-   padding-left: 24px;
-        padding-right: 24px;
-  };
+
+  @media screen and (min-width: $desktop) {
+    width: 560px;
+    padding: 60px;
+  }
 }
 
 .modal__close--second {
@@ -52,7 +52,7 @@
   width: 64px;
   height: 64px;
   text-align: center;
-  fill:var(--second-title-color);
+  fill: var(--second-title-color);
 
   &:hover,
   &:focus {
@@ -62,37 +62,39 @@
 }
 
 .modal__header {
-  
   font-weight: 600;
   line-height: 120%;
-   @media screen and (min-width: $desktop) and (max-width: 3600px) {
-    font-size: 2vw;
-  }
-  @media screen and (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 24px;
-  } 
-   @media screen and (min-width: $mobile) and (max-width: $tablet) {
+  @media screen and (min-width: $mobile) {
     font-size: 22px;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 2vw;
   }
 }
 
 .modal__subheader {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   color: var(--second-title-color);
-    @media screen and (min-width: $desktop) and (max-width: 3600px) {
-         font-size: 1.7vw;
+  @media screen and (min-width: $desktop) {
+    font-size: 1.7vw;
     margin-top: 14px;
     margin-bottom: 25px;
-  };
-  @media screen and (min-width: $tablet) and (max-width: $desktop) {
-      font-size: 16px;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
     margin-top: 8px;
     margin-bottom: 25px;
-  }; 
-   @media screen and (min-width: $mobile) and (max-width: $tablet) {
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-  };
+  }
+  //  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+  //   font-size: 15px;
+  //   margin-top: 5px;
+  //   margin-bottom: 15px;
+  // };
 }
 
 .modal__form {
@@ -103,8 +105,8 @@
     font-size: 15px;
   }
 
-  input[type="text"],
-  input[type="tel"] {
+  input[type='text'],
+  input[type='tel'] {
     background-color: var(--background-pages);
     font-size: 15px;
     width: 100%;
@@ -115,13 +117,34 @@
     height: 62px;
   }
 
-  input[type="checkbox"] {
-    margin-right: 5px;
-  }
+  .modal__checkbox {
+    display: flex;
+    align-items: start;
+    margin: 10px 0 10px 0;
+    label {
+      display: inline; // Ensure label content is inline
+      word-break: break-word; // Allow breaking words
 
+      a {
+        text-decoration: underline;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
+    input[type='checkbox'] {
+      margin-right: 5px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .modal__checkbox-br {
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
   button {
     width: 100%;
-    background-color:var(--main-red-color);
+    background-color: var(--main-red-color);
     color: white;
     padding: 20px 30px 20px 30px;
     border: none;
@@ -135,24 +158,23 @@
     border-bottom-right-radius: 250px;
     border-bottom-left-radius: 250px;
     margin-top: 15px;
-   @media screen and (min-width: $desktop) and (max-width: 3600px) {
-             font-size: 1.8vw;
-             margin-top: 25px;
-    };
-       @media screen and (min-width: $tablet) and (max-width: $desktop) {
-             font-size: 18px;
-             margin-top: 25px;
-    };
+    @media screen and (min-width: $desktop) and (max-width: 3600px) {
+      font-size: 1.8vw;
+      margin-top: 25px;
+    }
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+      font-size: 18px;
+      margin-top: 25px;
+    }
 
     @media screen and (min-width: $mobile) and (max-width: $tablet) {
-     padding-left: 25px;
-     padding-right: 25px;
-        
-    };
-  
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
     &:hover {
-      background-color:var(--main-title-color);
-      color:black;
+      background-color: var(--main-title-color);
+      color: black;
       border: 2px solid var(--main-red-color);
       transition-property: all;
       transition-duration: 300ms;
@@ -161,9 +183,16 @@
     }
   }
 }
-.svg-image{
+.svg-image {
   width: 36px;
   height: 36px;
-  fill:var(--second-title-color);
-  stroke:var(--second-title-color);
+  fill: var(--second-title-color);
+  stroke: var(--second-title-color);
+}
+.policy__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  padding: 30px;
 }
