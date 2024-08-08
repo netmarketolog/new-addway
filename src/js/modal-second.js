@@ -25,16 +25,34 @@ function closeModal() {
 }
 
 // Получаем токен бота и ID чата из атрибутов data-*
-const botToken = document.body.getAttribute('data-bot-token');
-const chatId = document.body.getAttribute('data-chat-id');
+let botTokenSecond = null;
+let chatIdSecond = null;
 
-const sendMessage = (name, message) => {
-  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+// Обработчик события для получения данных
+window.addEventListener('firebaseDataLoaded', (event) => {
+  botTokenSecond = event.detail.botToken;
+  chatIdSecond = event.detail.chatId;
+  console.log("botToken in modalSecond.js:", botTokenSecond);
+  console.log("chatId in modalSecond.js:", chatIdSecond);
+});
+
+// Пример функции для отправки сообщения
+const sendMessageSecond = (message) => {
+  if (!botTokenSecond || !chatIdSecond) {
+    console.error('botToken or chatId is not set');
+    return;
+  }
+
+  const url = `https://api.telegram.org/bot${botTokenSecond}/sendMessage`;
+
 
   const data = {
-    chat_id: chatId,
-    text: `До Команди\nІм'я: ${name}\nТелефон: ${message}`
+    chat_id: chatIdSecond,
+    text: message
   };
+
+  console.log("Sending request to:", url);
+  console.log("Request data:", data);
 
   fetch(url, {
     method: 'POST',
@@ -62,7 +80,7 @@ document.querySelector('.modal__form').addEventListener('submit', function(event
   event.preventDefault();
   const name = document.getElementById('name').value;
   const phone = document.getElementById('phone').value;
-  sendMessage(name, phone);
+  sendMessageSecond(name, phone);
   closeModal();
   this.reset();
 });

@@ -1,7 +1,7 @@
 
 if (!window.modalInitialized) {
   const modal = document.getElementById("modalHero");
-  const btn = document.getElementById("openModalBtn");
+ 
   const span = document.getElementsByClassName("close")[0];
   const spanHero = document.getElementsByClassName("modal__close modal__close--hero")[0];
 
@@ -30,36 +30,62 @@ if (!window.modalInitialized) {
   }
 
   // Telegram bot 
-  const botToken = document.body.getAttribute('data-bot-token');
-  const chatId = document.body.getAttribute('data-chat-id');
-  const sendMessage = (name, phone, business, competitors) => {
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+let botToken= null;
+let chatId = null;
 
-    const data = {
-      chat_id: chatId,
-      text: `До Команди\nІм'я: ${name}\nТелефон: ${phone}\nТематіка: ${business}\nКонкуренти:${competitors}`
-    };
+// Обработчик события для получения данных
+window.addEventListener('firebaseDataLoaded', (event) => {
+  botToken = event.detail.botToken;
+  chatId = event.detail.chatId;
+  console.log("botToken in modalFirst.js:", botToken);
+  console.log("chatId in modalFirst.js:", chatId);
+});
 
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.ok) {
-        alert('Message sent successfully!');
-      } else {
-        alert('Failed to send message. Error: ' + data.description);
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('Error sending message');
-    });
+// Пример функции для отправки сообщения
+const sendMessage = (name, phone, business, competitors) => {
+  if (!botToken || !chatId) {
+    console.error('botToken or chatId is not set');
+    return;
+  }
+
+  const message = `Name: ${name}\nPhone: ${phone}\nBusiness: ${business}\nCompetitors: ${competitors}`;
+
+  if (!message.trim()) {
+    console.error('Message text is empty');
+    alert('Message text is empty');
+    return;
+  }
+
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+  const data = {
+    chat_id: chatId,
+    text: message
   };
+
+  console.log("Sending request to:", url);
+  console.log("Request data:", data);
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.ok) {
+      alert('Message sent successfully!');
+    } else {
+      alert('Failed to send message. Error: ' + data.description);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error sending message');
+  });
+};
 
   document.querySelector('.modal__form--hero').addEventListener('submit', function(event) {
     event.preventDefault();
