@@ -15,6 +15,10 @@
     refs.body.classList.toggle('no-scroll');
   }
 
+  let screenWidth = window.innerWidth;
+  if (screenWidth >= 1280) {
+    return;
+  }
   refs.siteNavBtn.forEach(button => {
     button.addEventListener('click', function () {
       const dropdown = this.parentElement.nextElementSibling;
