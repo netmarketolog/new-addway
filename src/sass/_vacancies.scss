@@ -12,12 +12,6 @@
   }
 }
 
-// .vacancies__container {
-// }
-
-// .container {
-// }
-
 .section-title {
   font-size: 30px;
   font-weight: 500;
@@ -153,6 +147,11 @@
   top: 5px;
   width: 20px;
   height: 20px;
+  @media screen and (min-width: $desktop) {
+    width: 32px;
+    height: 32px;
+    top: 0;
+  }
 }
 
 .vacancies__item-text {
