@@ -1,5 +1,16 @@
+$modal-border-radius: 19px;
+$modal-padding: 16px;
+$modal-background-color: #fff;
+$modal-box-shadow: 0 16px 32px #00000014;
+$modal-button-gradient: linear-gradient(90deg, #582ed2 0%, #c91fe3 100%), #6532f7;
+$modal-button-height: 56px;
+$modal-button-radius: 108px;
+$modal-button-font-size: 15px;
+$modal-button-font-weight: 600;
+$modal-button-line-height: 56px;
+
 .modal--hero {
-  display: block; 
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -8,46 +19,65 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 16px;
+  padding: $modal-padding;
 }
 
 .modal__content--hero {
-  background-color: #fff;
+  background-color: $modal-background-color;
   margin: 0 auto;
   border: 1px solid #888;
   width: 80%;
   max-width: 1200px;
-  border-radius: 19px;
+  border-radius: $modal-border-radius;
   display: flex;
   overflow: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 16px 32px #00000014;
-  padding: 16px;
+  box-shadow: $modal-box-shadow;
+  padding: $modal-padding;
 }
-
+.modal__right-content{
+  padding: 30px;
+  width: 100%;
+}
 .modal__left--hero {
   flex: 1;
-  border-radius: 19px;
+  border-radius: $modal-border-radius;
   background-image: url('../images/firstModalLeftImage.png');
   background-size: cover;
   background-position: center;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.modal__text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .modal__left--hero h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .modal__left--hero p {
   margin: 10px 0 0;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.modal__left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 30px;
 }
 
 .modal__right--hero {
@@ -57,9 +87,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: $modal-background-color;
   overflow: hidden;
-  border-radius: 19px;
+  border-radius: $modal-border-radius;
   font-family: Raleway, sans-serif;
   position: relative;
 }
@@ -95,20 +125,22 @@
   padding: 0;
 }
 
-.modal__form--hero input[type="text"],
-.modal__form--hero input[type="tel"],
-.modal__form--hero input[type="url"] {
-  background: #fff;
+.modal__form--hero input[type='text'],
+.modal__form--hero input[type='tel'],
+.modal__form--hero input[type='url'] {
+  background: $modal-background-color;
   height: 48px;
   border: 1px solid #d0d5dd;
   border-radius: 104px;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: -.25px;
+  letter-spacing: -0.25px;
   line-height: 36px;
   width: 100%;
   padding: 0 54px 0 24px;
   outline: none;
+  display: flex;
+  align-items: center;
 }
 
 .input-wrapper {
@@ -118,35 +150,40 @@
 .input-wrapper .icon {
   position: absolute;
   right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 40%;
+  transform: translateY(-40%);
   pointer-events: none;
 }
 
-input#business:focus + .icon path,
-input#competitors:focus + .icon path,
-input#name:focus + .icon path,
-input#phone:focus + .icon path {
-  stroke: #c920e4; 
+input:focus + .icon path {
+  stroke: #c920e4;
 }
-
-.modal__form--hero input[type="text"]:focus,
-.modal__form--hero input[type="tel"]:focus,
-.modal__form--hero input[type="url"]:focus {
+input:hover + .icon path {
+  stroke: #c920e4;
+}
+.modal__form--hero input[type='text']:focus,
+.modal__form--hero input[type='tel']:focus,
+.modal__form--hero input[type='url']:focus {
   border-color: #c920e4;
+  box-shadow: 0 1px 1px $modal-button-gradient;
 }
-
+.modal__form--hero input[type='text']:hover,
+.modal__form--hero input[type='tel']:hover,
+.modal__form--hero input[type='url']:hover {
+  border-color: #c920e4;
+  box-shadow: 1px 1px 1px $modal-button-gradient;
+}
 .modal__form--hero button {
   max-width: 100%;
-  height: 56px;
-  background: linear-gradient(90deg, #582ed2 0%, #c91fe3 100%), #6532f7;
-  border-radius: 108px;
+  height: $modal-button-height;
+  background: $modal-button-gradient;
+  border-radius: $modal-button-radius;
   outline: 0;
   border: none;
   color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 56px;
+  font-size: $modal-button-font-size;
+  font-weight: $modal-button-font-weight;
+  line-height: $modal-button-line-height;
   text-align: center;
   margin-top: 32px;
   display: block;
@@ -168,7 +205,7 @@ input#phone:focus + .icon path {
   cursor: pointer;
   z-index: 10;
   background-color: #fff6;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .modal__close--hero:hover,

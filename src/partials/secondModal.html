@@ -1,26 +1,24 @@
 
-
-
-
 <div id="myModal" class="modal modal--second">
   <div class="modal__content modal__content--second">
     <span class="modal__close modal__close--second">
-      <span class="svg-image svg-image--u-ieslo4vq9" id="ieslo4vq9_0" data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" data-prefix="ig8tq0t98">
-          <path d="M46.56-.007L25 21.551 3.44-.007-.01 3.442 21.55 25-.01 46.558l3.45 3.449L25 28.449l21.56 21.558 3.45-3.449L28.45 25 50.01 3.442z"></path>
-        </svg>
-      </span>
+       <svg class="svg-image" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 6L6 18" stroke=var(--second-title-color); stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 6L18 18" stroke=var(--second-title-color); stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
     </span>
     <div class="modal__header">Залиште заявку</div>
     <div class="modal__subheader">Наші спеціалісти з радістю зв’яжуться з Вами найближчим часом</div>
     <form class="modal__form">
-      <label for="name">Ваше ім'я:</label>
-      <input type="text" id="name" name="name" placeholder="Ваше имя">
-      <label for="phone">Телефон:<span style="color: red;">*</span></label>
-      <input type="tel"  id="phone" name="phone" placeholder="Телефон *" required>
-      <label>
-        <input type="checkbox" required> Ознайомлен  <a href="#">користувацькою угодою</a> <span style="color: red;">*</span>
-      </label>
+      <label class="modal-form__label" for="name">Ваше ім'я:</label>
+      <input class="modal-form__input" type="text" id="name" name="name" placeholder="Ваше имя">
+      <label class="modal-form__label" for="phone">Телефон:<span style="color: red;">*</span></label>
+      <input class="modal-form__input" type="tel"  id="phone" name="phone" placeholder="Телефон *" required>
+<div class="modal__checkbox">
+  <label>
+    <input type="checkbox" required> <span>Ознайомлен з <br class="modal__checkbox-br"/> <a href="/src/partials/pravecyPolicy.html">користувацькою угодою * </a> 
+  </label>
+</div>
       <button class="modal__btn" type="submit">Відправити</button>
     </form>
   </div>
