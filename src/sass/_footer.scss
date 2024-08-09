@@ -11,6 +11,7 @@
     @media screen and (min-width: $desktop) {
       display: flex;
       justify-content: space-between;
+      text-align: start;
     }
   }
 
@@ -62,11 +63,21 @@
     @media screen and (min-width: $tablet) {
       margin-bottom: 30px;
     }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 60px;
+    }
   }
 
   &__email__title {
     margin-bottom: 9px;
     color: var(--second-title-color);
+  }
+
+  &__email {
+    @media screen and (min-width: $desktop) {
+      padding-right: 150px;
+    }
   }
 
   &__working__text {
@@ -188,7 +199,6 @@
 
     @media screen and (min-width: $desktop) {
       margin-top: 0;
-      width: 260px;
     }
   }
 }
